@@ -1,0 +1,125 @@
+.page-header {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  padding: 33px 0 0;
+
+  background-color: black; // TODO delete
+
+  @media (max-width: $tablet-only) {
+    @include tablet-container;
+
+    padding-top: 20px;
+  }
+
+  @media (max-width: $tablet-only) {
+    padding: 17px 4.68% 0 5.31%;
+  }
+}
+
+.page-header__wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 73%;
+  min-width: 980px;
+  margin: 0 auto;
+
+  @media (max-width: $tablet-only) {
+    width: 100%;
+    min-width: auto;
+  }
+}
+
+.page-header__logo {
+  flex-shrink: 0;
+
+  @media (max-width: $mobile-only) {
+    width: 38px;
+    height: 38px;
+  }
+}
+
+.page-header__contacts {
+  display: flex;
+  align-items: center;
+}
+
+.page-header__contacts ul {
+  @include reset-list;
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin-right: 1.97vw;
+
+  line-height: 18px;
+
+  @media (max-width: $tablet-only) {
+    margin-right: 0;
+  }
+}
+
+.page-header__contacts li {
+  margin-right: 4.58vw;
+
+  &:last-child {
+    margin-right: 0;
+  }
+
+  @media (max-width: $tablet-only) {
+    margin-right: 4.28vw;
+  }
+
+  @media (max-width: $mobile-only) {
+    margin-right: 7.18vw;
+  }
+}
+
+.page-header__contacts a {
+  display: inline-flex;
+  align-items: center;
+
+  color: $basic-white;
+}
+
+.page-header__contacts svg {
+  margin-right: 15px;
+
+  color: $accent-blue;
+
+  @media (max-width: $tablet-only) {
+    margin-right: 0;
+    width: 24px;
+    height: 24px;
+  }
+}
+
+.page-header__contacts span {
+  @media (max-width: $tablet-only) {
+    display: none;
+  }
+}
+
+.page-header__feedback a {
+  padding: 14px 26px 12px;
+
+  font-family: "Roboto Condensed", "Arial", sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 16px;
+  text-align: center;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+
+  border: 1px solid $basic-white;
+  border-radius: 5px;
+
+  @media (max-width: $tablet-only) {
+    display: none;
+  }
+}

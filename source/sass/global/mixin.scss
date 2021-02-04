@@ -1,0 +1,31 @@
+// reset default styles
+@mixin reset-text {
+  margin: 0;
+  padding: 0;
+}
+
+@mixin reset-list {
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
+}
+
+@mixin reset-button {
+  padding: 0;
+
+  font-family: "Roboto Condensed", "Arial", sans-serif;
+  font-style: normal;
+  font-weight: 700;
+
+  background-color: transparent;
+  border: none;
+
+  cursor: pointer;
+}
+
+// layout
+@mixin tablet-container {
+  padding-right: 3.25%;
+  padding-left: 3.25%;
+}
