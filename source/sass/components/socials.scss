@@ -1,0 +1,20 @@
+.socials ul {
+  display: flex;
+}
+
+.socials li {
+  margin-right: 16px;
+}
+
+.socials a {
+  color: #cdcdcd;
+
+  &:hover,
+  &:focus {
+    color: $special-gray;
+  }
+
+  &:active {
+    color: $basic-gray;
+  }
+}
