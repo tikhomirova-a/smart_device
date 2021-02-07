@@ -97,7 +97,11 @@
   }
 
   @media (max-width: $mobile-only) {
-    padding: 30px 0 25px;
+    padding: 0;
+
+    &--open {
+      padding-bottom: 25px;
+    }
   }
 
   &::before {
@@ -135,6 +139,16 @@
     height: auto;
     display: block;
   }
+
+  @media (max-width: $mobile-only) {
+    display: none;
+  }
+}
+
+.page-footer__nav--open ul {
+  @media (max-width: $mobile-only) {
+    display: block;
+  }
 }
 
 .page-footer__contacts {
@@ -144,8 +158,11 @@
 
   @media (max-width: $mobile-only) {
     position: relative;
+    padding: 0;
 
-    padding: 30px 0 25px;
+    &--open {
+      padding-bottom: 25px;
+    }
   }
 
   &::before {
@@ -166,7 +183,14 @@
 
 .page-footer__contacts ul {
   @media (max-width: $mobile-only) {
+    display: none;
     max-width: 90%;
+  }
+}
+
+.page-footer__contacts--open ul {
+  @media (max-width: $mobile-only) {
+    display: block;
   }
 }
 
@@ -230,7 +254,7 @@
   }
 }
 
-.page-footer h3 {
+.page-footer h3:not(.visually-hidden) {
   @include reset-text;
 
   margin-bottom: 30px;
@@ -246,7 +270,16 @@
   @media (max-width: $mobile-only) {
     position: relative;
 
-    margin-bottom: 35px;
+    padding: 30px 0;
+    margin-bottom: 0;
+
+    &:focus {
+      outline: 1px solid rgba(0, 178, 255, 0.5);
+    }
+
+    &:active {
+      outline: none;
+    }
   }
 
   &::after {
@@ -267,12 +300,16 @@
   }
 }
 
-.page-footer__nav--open h3::after,
-.page-footer__contacts--open h3::after {
+.page-footer__nav--open h3:not(.visually-hidden),
+.page-footer__contacts--open h3:not(.visually-hidden) {
   @media (max-width: $mobile-only) {
-    height: 1px;
+    margin-bottom: 5px;
 
-    background-color: #c4c4c4;
+    &::after {
+      height: 1px;
+
+      background-color: #c4c4c4;
+    }
   }
 }
 
