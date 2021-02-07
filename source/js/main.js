@@ -43,7 +43,6 @@
   };
 
   for (let header of headers) {
-    header.tabIndex = 0;
     header.addEventListener(`click`, onHeaderClick);
     header.addEventListener(`keydown`, onHeaderEnter);
   }
