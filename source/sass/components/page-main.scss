@@ -1,3 +1,12 @@
 .page-main__heading {
   padding: 90px 0 110px;
+
+  @media (max-width: $tablet-only) {
+    padding-bottom: 165px;
+  }
+
+  @media (max-width: $mobile-only) {
+    padding-top: 55px;
+    padding-bottom: 70px;
+  }
 }
