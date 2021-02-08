@@ -1,12 +1,11 @@
 .page-header {
-  //position: absolute; // TODO temporary hidden
+  position: absolute;
   top: 0;
   left: 0;
+  z-index: 1;
 
   width: 100%;
   padding: 33px 0 0;
-
-  background-color: black; // TODO delete
 
   @media (max-width: $tablet-only) {
     @include tablet-container;
@@ -35,6 +34,7 @@
 
 .page-header__logo {
   flex-shrink: 0;
+  display: block;
 
   @media (max-width: $mobile-only) {
     width: 38px;

@@ -28,7 +28,7 @@
   }
 }
 
-.page-footer__wrapper {
+.page-footer__socials-wrapper {
   min-width: 202px;
 
   @media (max-width: $tablet-only) {
@@ -195,13 +195,20 @@
 }
 
 .page-footer__nav a,
-.page-footer__contacts li {
-  color: $basic-dark;
-  opacity: 0.5;
-}
-
 .page-footer__contacts a {
   color: $basic-dark;
+  opacity: 0.5;
+
+  &:hover,
+  &:focus {
+    color: $special-gray;
+    opacity: 1;
+  }
+
+  &:active {
+    color: $special-gray;
+    opacity: 0.3;
+  }
 }
 
 .page-footer__copyright {
@@ -323,6 +330,7 @@
   }
 
   &:nth-child(4n) {
+    margin-right: 0;
     margin-left: auto;
   }
 
