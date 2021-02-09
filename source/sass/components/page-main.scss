@@ -15,7 +15,10 @@
   padding: 110px 0 95px;
 
   @media (max-width: $tablet-only) {
-    padding: 55px 0 75px;
+    @include tablet-container;
+
+    padding-top: 55px;
+    padding-bottom: 75px;
   }
 
   @media (max-width: $mobile-only) {
@@ -32,13 +35,19 @@
   margin: 0 auto;
 
   @media (max-width: $tablet-only) {
-    @include tablet-container;
-
     width: 100%;
     min-width: auto;
   }
+}
 
-  @media (max-width: $mobile-only) {
-    padding: 0;
+.page-main__company {
+  width: 60.93%;
+  min-width: 980px;
+  margin: 0 auto;
+  padding-top: 110px;
+
+  @media (max-width: $tablet-only) {
+    width: 100%;
+    min-width: auto;
   }
 }

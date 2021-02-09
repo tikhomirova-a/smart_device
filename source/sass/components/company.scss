@@ -1,0 +1,57 @@
+.company {
+  display: flex;
+}
+
+.company h2 {
+  @include reset-text;
+
+  font-family: "Roboto Condensed", "Arial", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 36px;
+  line-height: 51px;
+  color: $dark-gray;
+
+  @media (max-width: $tablet-only) {
+    font-size: 32px;
+    line-height: 140.62%;
+  }
+
+  @media (max-width: $mobile-only) {
+    font-size: 28px;
+  }
+}
+
+.company p {
+  @include reset-text;
+
+  color: $dark-gray;
+}
+
+.company a {
+  display: inline-block;
+  padding: 14px 30px 10px;
+
+  font-family: "Roboto Condensed", "Arial", sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 16px;
+  text-align: center;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: $accent-blue;
+
+  border: 1px solid $accent-blue;
+  border-radius: 5px;
+}
+
+.company__img-wrapper {
+  min-width: 200px;
+  height: 317px;
+}
+
+.company__img-wrapper img {
+  object-fit: cover;
+  object-position: right;
+}
