@@ -26,11 +26,11 @@
 
 // layout
 @mixin tablet-container {
-  padding-right: 3.25%;
+  padding-right: 3.25%; //25px
   padding-left: 3.25%;
 }
 
 @mixin mobile-container {
-  padding-right: 4.68%;
+  padding-right: 4.68%; //15px
   padding-left: 4.68%;
 }

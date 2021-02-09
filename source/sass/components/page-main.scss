@@ -10,3 +10,35 @@
     padding-bottom: 70px;
   }
 }
+
+.page-main__info {
+  padding: 110px 0 95px;
+
+  @media (max-width: $tablet-only) {
+    padding: 55px 0 75px;
+  }
+
+  @media (max-width: $mobile-only) {
+    @include mobile-container;
+
+    padding-top: 35px;
+    padding-bottom: 65px;
+  }
+}
+
+.page-main__features {
+  width: 60.93%;
+  min-width: 980px;
+  margin: 0 auto;
+
+  @media (max-width: $tablet-only) {
+    @include tablet-container;
+
+    width: 100%;
+    min-width: auto;
+  }
+
+  @media (max-width: $mobile-only) {
+    padding: 0;
+  }
+}
