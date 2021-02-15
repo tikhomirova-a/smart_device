@@ -1,0 +1,40 @@
+.button {
+  @include reset-button;
+
+  padding: 14px 30px 10px;
+
+  font-size: 14px;
+  line-height: 16px;
+  text-align: center;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: $accent-blue;
+
+  border: 1px solid $accent-blue;
+  border-radius: 5px;
+
+  &--contrast {
+    color: $basic-white;
+
+    border-color: $basic-white;
+  }
+
+  &:hover,
+  &:focus {
+    color: $basic-white;
+
+    background-color: $accent-blue;
+    outline: none;
+  }
+
+  &--contrast:hover,
+  &--contrast:focus {
+    color: $accent-blue;
+
+    background-color: $basic-white;
+  }
+
+  &:active {
+    opacity: 0.7;
+  }
+}

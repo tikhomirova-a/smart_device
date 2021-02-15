@@ -1,0 +1,102 @@
+.form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 5%;
+  row-gap: 40px;
+
+  color: $basic-white;
+
+  background-color: transparent;
+
+  @media (max-width: $tablet-width) {
+    column-gap: 5.4%;
+  }
+
+  @media (max-width: $mobile-width) {
+    grid-template-columns: 1fr;
+    row-gap: 30px;
+  }
+}
+
+.form__input {
+  &--textarea {
+    grid-column: 1/-1;
+  }
+}
+
+.form__input input,
+.form__input textarea {
+  width: 100%;
+  padding: 14px 16px;
+
+  font-family: "PT Mono", "Courier New", monospace;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 22px;
+  color: $basic-white;
+
+  border: none;
+  background-color: rgba(255, 255, 255, 0.1);
+
+  resize: none;
+
+  &::placeholder {
+    color: $basic-white;
+  }
+
+  &:hover,
+  &:focus {
+    color: $basic-white;
+
+    background-color: rgba(255, 255, 255, 0.1);
+    outline: 1px solid $basic-white;
+  }
+}
+
+.form__input textarea {
+  @media (max-width: $mobile-width) {
+    height: 105px;
+  }
+}
+
+
+.form__checkbox label {
+  position: relative;
+
+  padding-left: 32px;
+
+  font-family: "PT Mono", "Courier New", monospace;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 22px;
+
+  opacity: 0.8;
+}
+
+.form__checkbox-icon {
+  position: absolute;
+  left: 0;
+  top: 2px;
+
+  width: 16px;
+  height: 16px;
+
+  border: 1px solid $basic-white;
+
+  input:checked + & {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-image: url("../images/check.svg");
+  }
+
+  input:hover + &,
+  input:focus + & {
+    box-shadow: 2px 2px 5px $basic-white;
+  }
+}
+
+.form button {
+  //
+}

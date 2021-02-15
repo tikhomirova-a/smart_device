@@ -83,9 +83,32 @@
 }
 
 .page-main__feedback {
+  padding: 95px 0 110px;
+
   background-color: $accent-blue;
+  background-image: url("../images/triangles-bg.svg");
+  background-repeat: no-repeat;
+  background-position: 10.2% -60px;
+
+  @media (max-width: $tablet-width) {
+    padding: 85px 11.2% 105px 11.9%;
+
+    background-image: none;
+  }
+
+  @media (max-width: $mobile-width) {
+    @include mobile-container;
+
+    padding-top: 35px;
+    padding-bottom: 40px;
+  }
 }
 
 .page-main__feedback-wrapper {
   @include desktop-container;
+
+  @media (max-width: $tablet-width) {
+    width: 100%;
+    min-width: auto;
+  }
 }

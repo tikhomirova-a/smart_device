@@ -200,7 +200,7 @@
             платы и комплектующие Service Devices применяются на предприятиях Российских Железных Дорог (РЖД),
             РоссАвтоПрома (ВАЗ, АвтоГАЗ), МинАтома, СпецМедТехники. Среди наших клиентов крупнейшие Производители
             светотехники России.</p>
-          <a href="#">Подробнее</a>
+          <a class="button" href="#">Подробнее</a>
         </div>
       </section>
     </div>
@@ -211,7 +211,8 @@
           <li>
             <div class="service__item service__item--production">
               <a href="#">
-                <h3>Производство<br>печатных плат</h3>
+                <h3>Производство<br> печатных плат</h3>
+                <!--                1x: 370px, 2x: 740px-->
                 <picture>
                   <source srcset="images/production-desktop@1x.png 1x, images/production-desktop@2x.png 2x">
                   <img src="images/production-desktop@1x.png" width="370" height="620" alt="Процесс производства платы.">
@@ -222,7 +223,8 @@
           <li>
             <div class="service__item service__item--montage">
               <a href="#">
-                <h3>Монтаж печатных<br>плат</h3>
+                <h3>Монтаж печатных<br> плат</h3>
+                <!--                1x: 370px, 2x: 740px-->
                 <picture>
                   <source srcset="images/montage-desktop@1x.png 1x, images/montage-desktop@2x.png 2x">
                   <img src="images/montage-desktop@1x.png" width="370" height="620" alt="Процесс монтажа платы.">
@@ -233,8 +235,8 @@
           <li>
             <div class="service__item service__item--accessories">
               <a href="#">
-                <h3>Комплектующие<br>
-                  для светотехники</h3>
+                <h3>Комплектующие<br> для светотехники</h3>
+                <!--                1x: 370px, 2x: 740px-->
                 <picture>
                   <source srcset="images/light-desktop@1x.png 1x, images/light-desktop@2x.png 2x">
                   <img src="images/light-desktop@1x.png" width="370" height="620" alt="Лента со светодиодами.">
@@ -247,27 +249,41 @@
     </section>
     <section class="page-main__feedback">
       <div class="page-main__feedback-wrapper feedback">
-        <h2>Остались вопросы? Задайте их нам!</h2>
-        <p>Мы проконсультируем Вас бесплатно</p>
-        <form class="feedback__form form" method="POST" action="https://echo.htmlacademy.ru">
-          <div class="form__input">
-            <label for="input-name" class="visually-hidden">Введите Ваше имя</label>
-            <input id="input-name" type="text" name="name" placeholder="Имя" required>
-          </div>
-          <div class="form__input">
-            <label for="input-tel" class="visually-hidden">Введите 10 цифр Вашего номер телефона</label>
-            <input id="input-tel" type="tel" name="tel" placeholder="Телефон" required maxlength="10">
-          </div>
-          <div class="form__input">
-            <label for="input-question" class="visually-hidden">Задайте Ваш вопрос</label>
-            <textarea id="input-question" name="question-text" placeholder="Ваш вопрос"></textarea>
-          </div>
-          <div class="form__checkbox">
-            <input id="checkbox-agreement" type="checkbox" name="checkbox-agreement" required checked>
-            <label for="checkbox-agreement">Я согласен на обработку  персональных данных</label>
-          </div>
-          <button type="submit">Задать вопрос</button>
-        </form>
+        <div class="feedback__img-wrapper">
+          <!--        1x: 511px, 2x: 1022px-->
+          <picture>
+            <source srcset="images/paper-airplane@1x.png 1x, images/paper-airplane@2x.png 2x">
+            <img src="images/paper-airplane@1x.png" width="511" height="288" alt="Бумажный самолёт.">
+          </picture>
+        </div>
+        <div class="feedback__text">
+          <h2>Остались вопросы? Задайте их нам!</h2>
+          <p>Мы проконсультируем Вас бесплатно</p>
+          <form class="feedback__form form" method="POST" action="https://echo.htmlacademy.ru">
+            <div class="form__input">
+              <label for="input-name" class="visually-hidden">Введите Ваше имя</label>
+              <input id="input-name" type="text" name="name" placeholder="Имя" required>
+            </div>
+            <div class="form__input">
+              <label for="input-tel" class="visually-hidden">Введите 10 цифр Вашего номер телефона</label>
+              <input id="input-tel" type="tel" name="tel" placeholder="Телефон" required maxlength="10">
+            </div>
+            <div class="form__input form__input--textarea">
+              <label for="input-question" class="visually-hidden">Задайте Ваш вопрос</label>
+              <textarea id="input-question" name="question-text" placeholder="Ваш вопрос" rows="6"></textarea>
+            </div>
+            <button class="button button--contrast" type="submit">Задать вопрос</button>
+            <div class="form__checkbox">
+              <label for="checkbox-agreement">
+                <input id="checkbox-agreement" class="visually-hidden" type="checkbox" name="checkbox-agreement"
+                        required checked>
+                <span class="form__checkbox-icon"></span>
+                Я согласен на обработку персональных данных
+              </label>
+            </div>
+          </form>
+        </div>
+      </div>
     </section>
   </main>
   <footer class="page-footer">

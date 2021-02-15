@@ -54,35 +54,6 @@
 
 .company a {
   display: inline-block;
-  padding: 14px 30px 10px;
-
-  font-family: "Roboto Condensed", "Arial", sans-serif;
-  font-style: normal;
-  font-weight: 700;
-  font-size: 14px;
-  line-height: 16px;
-  text-align: center;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-  color: $accent-blue;
-
-  border: 1px solid $accent-blue;
-  border-radius: 5px;
-
-  &:hover,
-  &:focus {
-    color: $basic-white;
-
-    background-color: $accent-blue;
-    outline: none;
-  }
-
-  &:active {
-    color: $basic-white;
-
-    background-color: $accent-blue;
-    opacity: 0.7;
-  }
 }
 
 .company__img-wrapper {
