@@ -8,30 +8,30 @@
   text-align: center;
   letter-spacing: 0.05em;
   text-transform: uppercase;
-  color: $accent-blue;
+  color: $basic-white;
 
-  border: 1px solid $accent-blue;
+  border: 1px solid $basic-white;
   border-radius: 5px;
 
-  &--contrast {
-    color: $basic-white;
+  &--accent {
+    color: $accent-blue;
 
-    border-color: $basic-white;
+    border-color: $accent-blue;
   }
 
   &:hover,
   &:focus {
+    color: $accent-blue;
+
+    background-color: $basic-white;
+  }
+
+  &--accent:hover,
+  &--accent:focus {
     color: $basic-white;
 
     background-color: $accent-blue;
     outline: none;
-  }
-
-  &--contrast:hover,
-  &--contrast:focus {
-    color: $accent-blue;
-
-    background-color: $basic-white;
   }
 
   &:active {

@@ -107,18 +107,6 @@
 .page-header__feedback a {
   padding: 14px 26px 12px;
 
-  font-family: "Roboto Condensed", "Arial", sans-serif;
-  font-style: normal;
-  font-weight: 700;
-  font-size: 14px;
-  line-height: 16px;
-  text-align: center;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-
-  border: 1px solid $basic-white;
-  border-radius: 5px;
-
   @media (max-width: $tablet-width) {
     display: none;
   }

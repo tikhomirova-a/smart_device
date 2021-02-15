@@ -49,7 +49,7 @@
           </li>
         </ul>
         <div class="page-header__feedback">
-          <a href="#">Заказать&nbsp;звонок</a>
+          <a class="button" href="#">Заказать&nbsp;звонок</a>
         </div>
       </div>
     </div>
@@ -200,7 +200,7 @@
             платы и комплектующие Service Devices применяются на предприятиях Российских Железных Дорог (РЖД),
             РоссАвтоПрома (ВАЗ, АвтоГАЗ), МинАтома, СпецМедТехники. Среди наших клиентов крупнейшие Производители
             светотехники России.</p>
-          <a class="button" href="#">Подробнее</a>
+          <a class="button button--accent" href="#">Подробнее</a>
         </div>
       </section>
     </div>
@@ -261,21 +261,21 @@
           <p>Мы проконсультируем Вас бесплатно</p>
           <form class="feedback__form form" method="POST" action="https://echo.htmlacademy.ru">
             <div class="form__input">
-              <label for="input-name" class="visually-hidden">Введите Ваше имя</label>
-              <input id="input-name" type="text" name="name" placeholder="Имя" required>
+              <label for="feedback-name" class="visually-hidden">Введите Ваше имя</label>
+              <input id="feedback-name" type="text" name="name" placeholder="Имя" required>
             </div>
             <div class="form__input">
-              <label for="input-tel" class="visually-hidden">Введите 10 цифр Вашего номер телефона</label>
-              <input id="input-tel" type="tel" name="tel" placeholder="Телефон" required maxlength="10">
+              <label for="feedback-tel" class="visually-hidden">Введите 10 цифр Вашего номер телефона</label>
+              <input id="feedback-tel" type="tel" name="tel" placeholder="Телефон" required maxlength="10">
             </div>
             <div class="form__input form__input--textarea">
-              <label for="input-question" class="visually-hidden">Задайте Ваш вопрос</label>
-              <textarea id="input-question" name="question-text" placeholder="Ваш вопрос" rows="6"></textarea>
+              <label for="feedback-question" class="visually-hidden">Задайте Ваш вопрос</label>
+              <textarea id="feedback-question" name="question-text" placeholder="Ваш вопрос" rows="6"></textarea>
             </div>
-            <button class="button button--contrast" type="submit">Задать вопрос</button>
+            <button class="button" type="submit">Задать вопрос</button>
             <div class="form__checkbox">
-              <label for="checkbox-agreement">
-                <input id="checkbox-agreement" class="visually-hidden" type="checkbox" name="checkbox-agreement"
+              <label for="feedback-agreement">
+                <input id="feedback-agreement" class="visually-hidden" type="checkbox" name="checkbox-agreement"
                         required checked>
                 <span class="form__checkbox-icon"></span>
                 Я согласен на обработку персональных данных
@@ -383,6 +383,42 @@
       </div>
     </div>
   </footer>
+  <div class="modal modal--open">
+    <div class="modal__content">
+      <h3>Закажите звонок</h3>
+      <p>Оставьте контакты, мы проконсультируем вас бесплатно в удобное время</p>
+      <form class="modal__form form form--modal" method="POST" action="https://echo.htmlacademy.ru">
+        <div class="form__input">
+          <label for="modal-name" class="visually-hidden">Введите Ваше имя</label>
+          <input id="modal-name" type="text" name="name" placeholder="Имя" required>
+        </div>
+        <div class="form__input">
+          <label for="modal-tel" class="visually-hidden">Введите 10 цифр Вашего номер телефона</label>
+          <input id="modal-tel" type="tel" name="tel" placeholder="Телефон" required maxlength="10">
+        </div>
+        <div class="form__input form__input--textarea">
+          <label for="modal-question" class="visually-hidden">Задайте Ваш вопрос</label>
+          <textarea id="modal-question" name="question-text" placeholder="Ваш вопрос" rows="6"></textarea>
+        </div>
+        <button class="button" type="submit">Отправить</button>
+        <div class="form__checkbox">
+          <label for="modal-agreement">
+            <input id="modal-agreement" class="visually-hidden" type="checkbox" name="checkbox-agreement"
+                    required checked>
+            <span class="form__checkbox-icon"></span>
+            Я согласен на обработку персональных данных
+          </label>
+        </div>
+      </form>
+      <button type="button" aria-label="Закрыть модальное окно.">
+        <svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path fill-rule="evenodd" clip-rule="evenodd"
+                d="M0.146522 0.853553C-0.04874 0.658291 -0.04874 0.341709 0.146522 0.146447C0.341784 -0.0488155 0.658367 -0.0488156 0.853629 0.146447L8.27821 7.57103L15.7028 0.14645C15.8981 -0.0488124 16.2146 -0.0488125 16.4099 0.14645C16.6052 0.341712 16.6052 0.658294 16.4099 0.853556L8.98532 8.27814L16.41 15.7028C16.6052 15.8981 16.6052 16.2146 16.41 16.4099C16.2147 16.6052 15.8981 16.6052 15.7029 16.4099L8.27821 8.98525L0.853553 16.4099C0.658291 16.6052 0.341709 16.6052 0.146447 16.4099C-0.0488155 16.2146 -0.0488156 15.8981 0.146447 15.7028L7.57111 8.27814L0.146522 0.853553Z"
+                fill="currentColor"/>
+        </svg>
+      </button>
+    </div>
+  </div>
   <script src="js/main.js"></script>
 </body>
 </html>

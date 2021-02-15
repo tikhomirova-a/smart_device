@@ -16,6 +16,11 @@
     grid-template-columns: 1fr;
     row-gap: 30px;
   }
+
+  &--modal {
+    grid-template-columns: 1fr;
+    row-gap: 30px;
+  }
 }
 
 .form__input {
@@ -58,8 +63,11 @@
   @media (max-width: $mobile-width) {
     height: 105px;
   }
-}
 
+  .form--modal & {
+    height: 105px;
+  }
+}
 
 .form__checkbox label {
   position: relative;

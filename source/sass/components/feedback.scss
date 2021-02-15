@@ -56,5 +56,7 @@
 }
 
 .feedback__text p {
+  @include reset-text;
+
   margin-bottom: 50px;
 }

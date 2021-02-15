@@ -4,4 +4,10 @@
   min-width: 320px;
   display: grid;
   grid-template-rows: min-content 1fr min-content;
+
+  &--modal {
+    @media (min-width: 1023px) {
+      overflow: hidden;
+    }
+  }
 }

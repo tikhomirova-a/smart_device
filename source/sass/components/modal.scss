@@ -1,0 +1,65 @@
+.modal {
+  display: none;
+
+  &--open {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+
+    display: block;
+    width: 100%;
+
+    color: $basic-white;
+
+    background-color: rgba(0, 0, 0, 0.4);
+  }
+}
+
+.modal__content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  transform: translate(-50%, -50%);
+
+  width: 490px;
+  padding: 35px 40px;
+
+  background-color: $accent-blue;
+}
+
+.modal__content h3 {
+  @include reset-text;
+
+  font-family: "Roboto Condensed", "Arial", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 28px;
+  line-height: 140.62%;
+}
+
+.modal__content p {
+  @include reset-text;
+
+  margin-bottom: 30px;
+}
+
+.modal__content > button {
+  @include reset-button;
+
+  position: absolute;
+  top: 0;
+  right: 0;
+
+  width: 57px;
+  height: 57px;
+
+  color: $basic-white;
+
+  &:hover,
+  &:focus {
+    color: $basic-gray;
+  }
+}
