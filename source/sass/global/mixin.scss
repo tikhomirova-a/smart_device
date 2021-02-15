@@ -25,12 +25,18 @@
 }
 
 // layout
+@mixin desktop-container {
+  width: 60.93%;
+  min-width: 980px;
+  margin: 0 auto;
+}
+
 @mixin tablet-container {
-  padding-right: 3.25%; //25px
+  padding-right: 3.25%; //25px TODO
   padding-left: 3.25%;
 }
 
 @mixin mobile-container {
-  padding-right: 4.68%; //15px
+  padding-right: 4.68%; //15px TODO
   padding-left: 4.68%;
 }

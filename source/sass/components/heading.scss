@@ -17,14 +17,14 @@
       url("../images/rhombs.svg");
   }
 
-  @media (max-width: $tablet-only) {
+  @media (max-width: $tablet-width) {
     position: static;
 
     background-size: cover, 501px 501px;
     background-position: center, 50vw -10%;
   }
 
-  @media (max-width: $mobile-only) {
+  @media (max-width: $mobile-width) {
     background-position: 55%, 45vw -40%;
   }
 }
@@ -36,7 +36,7 @@
   display: flex;
   padding: 215px 0 0;
 
-  @media (max-width: $tablet-only) {
+  @media (max-width: $tablet-width) {
     width: 100%;
     min-width: auto;
     padding: 40px 0 0 11.42%;
@@ -44,7 +44,7 @@
     grid-template-columns: auto minmax(260px, 1fr);
   }
 
-  @media (max-width: $mobile-only) {
+  @media (max-width: $mobile-width) {
     display: flex;
     flex-direction: column;
     padding: 35px 0 0;
@@ -68,7 +68,7 @@
     left: calc(13.17% - 90px / 2 + 8px);
   }
 
-  @media (max-width: $tablet-only) {
+  @media (max-width: $tablet-width) {
     display: none;
   }
 }
@@ -76,11 +76,11 @@
 .heading__info {
   max-width: 720px;
 
-  @media (max-width: $tablet-only) {
+  @media (max-width: $tablet-width) {
     max-width: 500px;
   }
 
-  @media (max-width: $mobile-only) {
+  @media (max-width: $mobile-width) {
     @include mobile-container;
 
     max-width: none;
@@ -101,14 +101,14 @@
   letter-spacing: 0.07em;
   text-transform: uppercase;
 
-  @media (max-width: $tablet-only) {
+  @media (max-width: $tablet-width) {
     margin-top: 75px;
 
     font-size: 60px;
     line-height: 70px;
   }
 
-  @media (max-width: $mobile-only) {
+  @media (max-width: $mobile-width) {
     margin-top: -25px;
 
     font-size: 40px;
@@ -127,14 +127,14 @@
   font-size: 22px;
   line-height: 34px;
 
-  @media (max-width: $tablet-only) {
+  @media (max-width: $tablet-width) {
     padding-left: 48px;
 
     font-size: 18px;
     line-height: 28px;
   }
 
-  @media (max-width: $mobile-only) {
+  @media (max-width: $mobile-width) {
     font-size: 16px;
     line-height: 25px;
   }
@@ -150,7 +150,7 @@
 
     background-color: $basic-white;
 
-    @media (max-width: $tablet-only) {
+    @media (max-width: $tablet-width) {
       top: 15px;
 
       width: 33px;
@@ -179,12 +179,12 @@
 
   transform: none;
 
-  @media (max-width: $tablet-only) {
+  @media (max-width: $tablet-width) {
     margin-left: 48px;
     width: calc(100% - 48px);
   }
 
-  @media (max-width: $mobile-only) {
+  @media (max-width: $mobile-width) {
     margin-left: 0;
     width: 100%;
   }
@@ -201,7 +201,7 @@
 
 .heading__info span {
   &:first-of-type {
-    @media (max-width: $mobile-only) {
+    @media (max-width: $mobile-width) {
       display: none;
     }
   }
@@ -209,7 +209,7 @@
   &:last-of-type {
     display: none;
 
-    @media (max-width: $mobile-only) {
+    @media (max-width: $mobile-width) {
       display: inline;
     }
   }
@@ -224,7 +224,7 @@
     //margin-left: 8.16%; TODO
   }
 
-  @media (max-width: $tablet-only) {
+  @media (max-width: $tablet-width) {
     margin-right: -23%;
     margin-left: 0;
     min-width: auto;
@@ -232,7 +232,7 @@
     height: 340px;
   }
 
-  @media (max-width: $mobile-only) {
+  @media (max-width: $mobile-width) {
     height: 220px;
     width: 91.87%;
     margin: 0 -7px 0 auto;
@@ -242,13 +242,13 @@
 .heading__img-wrapper img {
   display: block;
 
-  @media (max-width: $tablet-only) {
+  @media (max-width: $tablet-width) {
     height: 100%;
     object-fit: cover;
     object-position: left;
   }
 
-  @media (max-width: $mobile-only) {
+  @media (max-width: $mobile-width) {
     object-fit: contain;
     object-position: center;
   }

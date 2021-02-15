@@ -1,9 +1,15 @@
 .company {
   display: flex;
+
+  @media (max-width: $mobile-width) {
+    display: block;
+  }
 }
 
 .company h2 {
   @include reset-text;
+
+  margin-bottom: 18px;
 
   font-family: "Roboto Condensed", "Arial", sans-serif;
   font-style: normal;
@@ -12,12 +18,14 @@
   line-height: 51px;
   color: $dark-gray;
 
-  @media (max-width: $tablet-only) {
+  @media (max-width: $tablet-width) {
+    margin-bottom: 25px;
+
     font-size: 32px;
     line-height: 140.62%;
   }
 
-  @media (max-width: $mobile-only) {
+  @media (max-width: $mobile-width) {
     font-size: 28px;
   }
 }
@@ -25,7 +33,23 @@
 .company p {
   @include reset-text;
 
+  margin-bottom: 15px;
+
   color: $dark-gray;
+
+  &:last-of-type {
+    margin-bottom: 25px;
+  }
+
+  @media (max-width: $tablet-width) {
+    &:last-of-type {
+      margin-bottom: 35px;
+    }
+  }
+
+  @media (max-width: $mobile-width) {
+    margin-bottom: 35px;
+  }
 }
 
 .company a {
@@ -44,14 +68,45 @@
 
   border: 1px solid $accent-blue;
   border-radius: 5px;
+
+  &:hover,
+  &:focus {
+    color: $basic-white;
+
+    background-color: $accent-blue;
+    outline: none;
+  }
+
+  &:active {
+    color: $basic-white;
+
+    background-color: $accent-blue;
+    opacity: 0.7;
+  }
 }
 
 .company__img-wrapper {
-  min-width: 200px;
+  width: 190px;
   height: 317px;
+  flex-shrink: 0;
+
+  @media (max-width: $tablet-width) {
+    width: 180px;
+    height: 360px;
+  }
+
+  @media (max-width: $mobile-width) {
+    display: none;
+  }
 }
 
 .company__img-wrapper img {
+  height: 100%;
+
   object-fit: cover;
   object-position: right;
+
+  @media (max-width: $tablet-width) {
+    object-position: center;
+  }
 }

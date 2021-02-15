@@ -7,13 +7,13 @@
   width: 100%;
   padding: 33px 0 0;
 
-  @media (max-width: $tablet-only) {
+  @media (max-width: $tablet-width) {
     @include tablet-container;
 
     padding-top: 20px;
   }
 
-  @media (max-width: $mobile-only) {
+  @media (max-width: $mobile-width) {
     padding: 17px 4.68% 0 5.31%;
   }
 }
@@ -26,7 +26,7 @@
   min-width: 980px;
   margin: 0 auto;
 
-  @media (max-width: $tablet-only) {
+  @media (max-width: $tablet-width) {
     width: 100%;
     min-width: auto;
   }
@@ -36,7 +36,7 @@
   flex-shrink: 0;
   display: block;
 
-  @media (max-width: $mobile-only) {
+  @media (max-width: $mobile-width) {
     width: 38px;
     height: 38px;
   }
@@ -58,7 +58,7 @@
 
   line-height: 18px;
 
-  @media (max-width: $tablet-only) {
+  @media (max-width: $tablet-width) {
     margin-right: 0;
   }
 }
@@ -70,11 +70,11 @@
     margin-right: 0;
   }
 
-  @media (max-width: $tablet-only) {
+  @media (max-width: $tablet-width) {
     margin-right: 4.28vw;
   }
 
-  @media (max-width: $mobile-only) {
+  @media (max-width: $mobile-width) {
     margin-right: 7.18vw;
   }
 }
@@ -91,7 +91,7 @@
 
   color: $accent-blue;
 
-  @media (max-width: $tablet-only) {
+  @media (max-width: $tablet-width) {
     margin-right: 0;
     width: 24px;
     height: 24px;
@@ -99,7 +99,7 @@
 }
 
 .page-header__contacts span {
-  @media (max-width: $tablet-only) {
+  @media (max-width: $tablet-width) {
     display: none;
   }
 }
@@ -119,7 +119,7 @@
   border: 1px solid $basic-white;
   border-radius: 5px;
 
-  @media (max-width: $tablet-only) {
+  @media (max-width: $tablet-width) {
     display: none;
   }
 }
