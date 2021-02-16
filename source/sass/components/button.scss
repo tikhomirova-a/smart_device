@@ -24,6 +24,7 @@
     color: $accent-blue;
 
     background-color: $basic-white;
+    outline: none;
   }
 
   &--accent:hover,
@@ -31,7 +32,6 @@
     color: $basic-white;
 
     background-color: $accent-blue;
-    outline: none;
   }
 
   &:active {

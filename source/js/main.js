@@ -56,6 +56,8 @@
   let modal;
   let modalContent;
   let modalClose;
+  let modalForm;
+  let modalFormTel;
 
   if (document.querySelector(`.body`)) {
     body = document.querySelector(`.body`);
@@ -70,6 +72,14 @@
       if (modal.querySelector(`.modal__content`)) {
         modalContent = modal.querySelector(`.modal__content`);
 
+        if (modal.querySelector(`.form`)) {
+          modalForm = modal.querySelector(`.form`);
+
+          if (modalForm.querySelector(`.form__input--tel input`)) {
+            modalFormTel = modalForm.querySelector(`.form__input--tel input`);
+          }
+        }
+
         if (modalContent.querySelector(`#close-modal`)) {
           modalClose = modalContent.querySelector(`#close-modal`);
         }
@@ -79,6 +89,9 @@
 
   const showModal = () => {
     modal.classList.add(`modal--open`);
+    modal.querySelector(`.form__input--name input`).focus();
+    modalFormTel.addEventListener(`input`, window.form.onFormTelInput.bind(undefined, modalFormTel));
+    modalForm.addEventListener(`submit`, window.form.onFormSubmit.bind(undefined, modalForm));
     modalClose.addEventListener(`click`, onModalCloseClick);
     modalContent.addEventListener(`click`, onModalContentClick);
     body.addEventListener(`keydown`, onModalEsc);
@@ -88,6 +101,8 @@
 
   const hideModal = () => {
     modal.classList.remove(`modal--open`);
+    modalFormTel.removeEventListener(`input`, window.form.onFormTelInput.bind(undefined, modalFormTel));
+    modalForm.removeEventListener(`submit`, window.form.onFormSubmit.bind(undefined, modalForm));
     modalClose.removeEventListener(`click`, onModalCloseClick);
     modalContent.removeEventListener(`click`, onModalContentClick);
     body.removeEventListener(`keydown`, onModalEsc);
@@ -124,4 +139,51 @@
   if (feedbackLink) {
     feedbackLink.addEventListener(`click`, onFeedbackLinkClick);
   }
+
+  window.modal = {
+    body
+  };
+})();
+
+(function () {
+  let form;
+  let formTel;
+
+  if (window.modal.body) {
+    if (window.modal.body.querySelector(`.form`)) {
+      form = window.modal.body.querySelector(`.form`);
+
+      if (form.querySelector(`.form__input--tel input`)) {
+        formTel = form.querySelector(`.form__input--tel input`);
+      }
+    }
+  }
+
+  const onFormTelInput = (input) => {
+    const re = /[\d]/g;
+
+    if (input.value.length > 0 && !re.test(input.value)) {
+      input.setCustomValidity(`Пожалуйста, вводите только цифры.`);
+    } else if (input.value.length > 0 && (input.value.length < 10 || input.value.length > 10)) {
+      input.setCustomValidity(`Длина номера телефона должна составлять 10 цифр.`);
+    } else {
+      input.setCustomValidity(``);
+    }
+    input.reportValidity();
+  };
+
+  formTel.addEventListener(`input`, onFormTelInput.bind(undefined, formTel));
+
+  const onFormSubmit = (input, evt) => {
+    if (!input.validity.valid) {
+      evt.preventDefault();
+    }
+  };
+
+  form.addEventListener(`submit`, onFormSubmit.bind(undefined, formTel));
+
+  window.form = {
+    onFormTelInput,
+    onFormSubmit
+  };
 })();

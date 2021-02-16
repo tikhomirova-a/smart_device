@@ -260,13 +260,13 @@
           <h2>Остались вопросы? Задайте их нам!</h2>
           <p>Мы проконсультируем Вас бесплатно</p>
           <form class="feedback__form form" method="POST" action="https://echo.htmlacademy.ru">
-            <div class="form__input">
+            <div class="form__input form__input--name">
               <label for="feedback-name" class="visually-hidden">Введите Ваше имя</label>
               <input id="feedback-name" type="text" name="name" placeholder="Имя" required>
             </div>
-            <div class="form__input">
+            <div class="form__input form__input--tel">
               <label for="feedback-tel" class="visually-hidden">Введите 10 цифр Вашего номер телефона</label>
-              <input id="feedback-tel" type="tel" name="tel" placeholder="Телефон" required maxlength="10">
+              <input id="feedback-tel" type="tel" name="tel" placeholder="Телефон" required maxlength="10" minlength="10">
             </div>
             <div class="form__input form__input--textarea">
               <label for="feedback-question" class="visually-hidden">Задайте Ваш вопрос</label>
@@ -388,13 +388,13 @@
       <h3>Закажите звонок</h3>
       <p>Оставьте контакты, мы проконсультируем вас бесплатно в удобное время</p>
       <form class="modal__form form form--modal" method="POST" action="https://echo.htmlacademy.ru">
-        <div class="form__input">
+        <div class="form__input form__input--name">
           <label for="modal-name" class="visually-hidden">Введите Ваше имя</label>
           <input id="modal-name" type="text" name="name" placeholder="Имя" required>
         </div>
-        <div class="form__input">
+        <div class="form__input form__input--tel">
           <label for="modal-tel" class="visually-hidden">Введите 10 цифр Вашего номер телефона</label>
-          <input id="modal-tel" type="tel" name="tel" placeholder="Телефон" required maxlength="10">
+          <input id="modal-tel" type="tel" name="tel" placeholder="Телефон" required maxlength="10" minlength="10">
         </div>
         <div class="form__input form__input--textarea">
           <label for="modal-question" class="visually-hidden">Задайте Ваш вопрос</label>
