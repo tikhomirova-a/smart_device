@@ -51,6 +51,50 @@
 })();
 
 (function () {
+  const storageAvailable = (type) => {
+    let storage;
+    try {
+      storage = window[type];
+      const x = `__storage_test__`;
+      storage.setItem(x, x);
+      storage.removeItem(x);
+      return true;
+    } catch (e) {
+      return e instanceof DOMException && (
+        e.code === 22 ||
+        e.code === 1014 ||
+        e.name === `QuotaExceededError` ||
+        e.name === `NS_ERROR_DOM_QUOTA_REACHED`) &&
+        (storage && storage.length !== 0);
+    }
+  };
+
+  const setValues = (form) => {
+    const name = localStorage.getItem(`name`);
+    const tel = localStorage.getItem(`tel`);
+    const question = localStorage.getItem(`question`);
+
+    form.querySelector(`.form__input--name input`).value = name;
+    form.querySelector(`.form__input--tel input`).value = tel;
+    form.querySelector(`.form__input--textarea textarea`).value = question;
+  };
+
+  const saveToStorage = (form) => {
+    localStorage.setItem(`name`, form.querySelector(`.form__input--name input`).value);
+    localStorage.setItem(`tel`, form.querySelector(`.form__input--tel input`).value);
+    localStorage.setItem(`question`, form.querySelector(`.form__input--textarea textarea`).value);
+
+    setValues(form);
+  };
+
+  window.storage = {
+    storageAvailable,
+    setValues,
+    saveToStorage
+  };
+})();
+
+(function () {
   let body;
   let feedbackLink;
   let modal;
@@ -58,6 +102,8 @@
   let modalClose;
   let modalForm;
   let modalFormTel;
+  let modalFormName;
+  let modalFormText;
 
   if (document.querySelector(`.body`)) {
     body = document.querySelector(`.body`);
@@ -78,6 +124,14 @@
           if (modalForm.querySelector(`.form__input--tel input`)) {
             modalFormTel = modalForm.querySelector(`.form__input--tel input`);
           }
+
+          if (modalForm.querySelector(`.form__input--name input`)) {
+            modalFormName = modalForm.querySelector(`.form__input--name input`);
+          }
+
+          if (modalForm.querySelector(`.form__input--textarea textarea`)) {
+            modalFormText = modalForm.querySelector(`.form__input--textarea textarea`);
+          }
         }
 
         if (modalContent.querySelector(`#close-modal`)) {
@@ -90,6 +144,7 @@
   const showModal = () => {
     modal.classList.add(`modal--open`);
     modal.querySelector(`.form__input--name input`).focus();
+    modalFormTel.addEventListener(`focus`, window.form.onFormTelFocus.bind(undefined, modalFormTel));
     modalFormTel.addEventListener(`input`, window.form.onFormTelInput.bind(undefined, modalFormTel));
     modalForm.addEventListener(`submit`, window.form.onFormSubmit.bind(undefined, modalForm));
     modalClose.addEventListener(`click`, onModalCloseClick);
@@ -97,10 +152,23 @@
     body.addEventListener(`keydown`, onModalEsc);
     modal.addEventListener(`click`, onModalOverlayClick);
     body.classList.add(`body--modal`);
+
+    if (window.storage.storageAvailable(`localStorage`)) {
+      window.storage.setValues(modalForm);
+
+      const onInputChange = (input, form) => {
+        window.storage.saveToStorage(form);
+      };
+
+      modalFormName.addEventListener(`change`, onInputChange.bind(undefined, modalFormName, modalForm, `name`));
+      modalFormTel.addEventListener(`change`, onInputChange.bind(undefined, modalFormTel, modalForm, `tel`));
+      modalFormText.addEventListener(`change`, onInputChange.bind(undefined, modalFormText, modalForm, `question`));
+    }
   };
 
   const hideModal = () => {
     modal.classList.remove(`modal--open`);
+    modalFormTel.removeEventListener(`focus`, window.form.onFormTelFocus.bind(undefined, modalFormTel));
     modalFormTel.removeEventListener(`input`, window.form.onFormTelInput.bind(undefined, modalFormTel));
     modalForm.removeEventListener(`submit`, window.form.onFormSubmit.bind(undefined, modalForm));
     modalClose.removeEventListener(`click`, onModalCloseClick);
@@ -146,33 +214,54 @@
 })();
 
 (function () {
-  let form;
+  let feedbackForm;
+  let formName;
   let formTel;
+  let formText;
 
   if (window.modal.body) {
     if (window.modal.body.querySelector(`.form`)) {
-      form = window.modal.body.querySelector(`.form`);
+      feedbackForm = window.modal.body.querySelector(`.form`);
 
-      if (form.querySelector(`.form__input--tel input`)) {
-        formTel = form.querySelector(`.form__input--tel input`);
+      if (feedbackForm.querySelector(`.form__input--tel input`)) {
+        formTel = feedbackForm.querySelector(`.form__input--tel input`);
+      }
+
+      if (feedbackForm.querySelector(`.form__input--name input`)) {
+        formName = feedbackForm.querySelector(`.form__input--name input`);
+      }
+
+      if (feedbackForm.querySelector(`.form__input--textarea textarea`)) {
+        formText = feedbackForm.querySelector(`.form__input--textarea textarea`);
       }
     }
   }
 
-  const onFormTelInput = (input) => {
-    const re = /[\d]/g;
+  const onFormTelFocus = (input) => {
+    input.value = `+7(`;
+  };
 
-    if (input.value.length > 0 && !re.test(input.value)) {
+  const onFormTelInput = (input) => {
+    const re = /\+7\([\d]/g;
+    const completedRe = /\+7\([\d]{10}/g;
+    const finalRe = /\+7\([\d]{10}\)/g;
+
+    if (input.value.length > 0 && input.value.length < 13 && !re.test(input.value)) {
       input.setCustomValidity(`Пожалуйста, вводите только цифры.`);
-    } else if (input.value.length > 0 && (input.value.length < 10 || input.value.length > 10)) {
-      input.setCustomValidity(`Длина номера телефона должна составлять 10 цифр.`);
+    } else if (input.value.length > 0 && (input.value.length < 13 || input.value.length > 13) && !finalRe.test(input.value)) {
+      input.setCustomValidity(`Пожалуйста, введите 10 цифр номера телефона.`);
+    } else if (input.value.length === 13 && completedRe.test(input.value)) {
+      input.value += `)`;
+      input.setCustomValidity(``);
+    } else if (input.value.length < 14 && !finalRe.test(input.value)) {
+      input.setCustomValidity(`Пожалуйста, введите 10 цифр номера телефона.`);
+    } else if (input.value.length === 14 && finalRe.test(input.value)) {
+      input.setCustomValidity(``);
     } else {
       input.setCustomValidity(``);
     }
     input.reportValidity();
   };
-
-  formTel.addEventListener(`input`, onFormTelInput.bind(undefined, formTel));
 
   const onFormSubmit = (input, evt) => {
     if (!input.validity.valid) {
@@ -180,9 +269,26 @@
     }
   };
 
-  form.addEventListener(`submit`, onFormSubmit.bind(undefined, formTel));
+  if (window.storage.storageAvailable(`localStorage`) && feedbackForm) {
+    window.storage.setValues(feedbackForm);
+
+    const onInputChange = (input, form) => {
+      window.storage.saveToStorage(form);
+    };
+
+    formName.addEventListener(`change`, onInputChange.bind(undefined, formName, feedbackForm, `name`));
+    formTel.addEventListener(`change`, onInputChange.bind(undefined, formTel, feedbackForm, `tel`));
+    formText.addEventListener(`change`, onInputChange.bind(undefined, formText, feedbackForm, `question`));
+  }
+
+  if (feedbackForm) {
+    formTel.addEventListener(`focus`, onFormTelFocus.bind(undefined, formTel));
+    formTel.addEventListener(`input`, onFormTelInput.bind(undefined, formTel));
+    feedbackForm.addEventListener(`submit`, onFormSubmit.bind(undefined, formTel));
+  }
 
   window.form = {
+    onFormTelFocus,
     onFormTelInput,
     onFormSubmit
   };
