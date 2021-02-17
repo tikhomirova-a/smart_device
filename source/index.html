@@ -5,6 +5,32 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="css/style.min.css">
   <title>Smart Device|Homepage</title>
+  <!-- Pixel Glass -->
+  <style>
+    HTML {
+      background-repeat: no-repeat;
+      background-position:  50% 0;
+      /* Mobile layout by default */
+      background-image: url( "images/mockup320.png" );
+    }
+    /* Tablet */
+    @media ( min-width: 760px ) {
+      HTML {
+        /* Tablet layout */
+        background-image: url( "images/mockup770.png" );
+      }
+    }
+    /* Desktop */
+    @media ( min-width: 960px ) {
+      HTML {
+        /* Desktop layout */
+        background-image: url( "images/mockup1920.png" );
+      }
+    }
+  </style>
+  <link href="../node_modules/pixel-glass/styles.css" rel="stylesheet">
+  <script src="../node_modules/pixel-glass/script.js"></script>
+  <!-- // Pixel Glass -->
 </head>
 <body class="body">
   <header class="page-header">
@@ -196,10 +222,10 @@
           <h2>О компании</h2>
           <p>Мы поставляем электронные комплектующие, производим печатные платы и предоставляем мировые технологии с
             1997 года. Выполняем срочные заказы и пилотные образцы до 10 дней.</p>
-          <p>Наши поставщики - мировые производители электронных компонентов: OSRAM, CREE, HOLGLITRONIC, REFOND. Печатные
+          <p><span>Наши поставщики - мировые производители электронных компонентов: OSRAM, CREE, HOLGLITRONIC, REFOND. Печатные
             платы и комплектующие Service Devices применяются на предприятиях Российских Железных Дорог (РЖД),
             РоссАвтоПрома (ВАЗ, АвтоГАЗ), МинАтома, СпецМедТехники. Среди наших клиентов крупнейшие Производители
-            светотехники России.</p>
+            светотехники России.</span></p>
           <a class="button button--accent" href="#">Подробнее</a>
         </div>
       </section>

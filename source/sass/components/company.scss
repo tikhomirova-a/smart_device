@@ -19,7 +19,7 @@
   color: $dark-gray;
 
   @media (max-width: $tablet-width) {
-    margin-bottom: 25px;
+    margin-bottom: 27px;
 
     font-size: 32px;
     line-height: 140.62%;
@@ -33,37 +33,44 @@
 .company p {
   @include reset-text;
 
-  margin-bottom: 15px;
+  max-width: 984px;
+  margin-bottom: 20px;
 
   color: $dark-gray;
 
   &:last-of-type {
-    margin-bottom: 25px;
+    margin-bottom: 40px;
   }
 
   @media (max-width: $tablet-width) {
     &:last-of-type {
-      margin-bottom: 35px;
+      margin-bottom: 40px;
+      height: 90px;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
   }
 
   @media (max-width: $mobile-width) {
     margin-bottom: 35px;
+    height: auto;
   }
 }
 
 .company a {
   display: inline-block;
   vertical-align: middle;
+  padding-right: 50px;
+  padding-left: 50px;
 }
 
 .company__img-wrapper {
-  width: 190px;
+  width: 180px;
   height: 317px;
   flex-shrink: 0;
 
   @media (max-width: $tablet-width) {
-    width: 180px;
+    width: 185px;
     height: 360px;
   }
 
@@ -76,7 +83,7 @@
   height: 100%;
 
   object-fit: cover;
-  object-position: right;
+  object-position: 80%;
 
   @media (max-width: $tablet-width) {
     object-position: center;

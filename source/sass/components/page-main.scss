@@ -1,5 +1,5 @@
 .page-main__heading {
-  padding: 90px 0 110px;
+  padding: 90px 0 105px;
 
   @media (max-width: $tablet-width) {
     padding-bottom: 165px;
@@ -12,13 +12,22 @@
 }
 
 .page-main__info {
-  padding: 110px 0 95px;
+  padding: 112px 0 96px;
+
+  background-image: url("../images/figures-bg.svg");
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-position: center 35%;
 
   @media (max-width: $tablet-width) {
     @include tablet-container;
 
     padding-top: 55px;
     padding-bottom: 75px;
+
+    background-image: url("../images/triangle-tablet-bg.svg");
+    background-size: 72%;
+    background-position: right 40%;
   }
 
   @media (max-width: $mobile-width) {
@@ -46,6 +55,7 @@
   @media (max-width: $tablet-width) {
     width: 100%;
     min-width: auto;
+    padding-top: 55px;
   }
 
   @media (max-width: $mobile-width) {
@@ -68,13 +78,13 @@
 .page-main__service-wrapper {
   @include desktop-container;
 
-  padding: 95px 0 125px;
+  padding: 90px 0 129px;
 
   @media (max-width: $tablet-width) {
     width: 100%;
     min-width: auto;
 
-    padding: 55px 0 75px;
+    padding: 50px 0 79px;
   }
 
   @media (max-width: $mobile-width) {
@@ -83,15 +93,15 @@
 }
 
 .page-main__feedback {
-  padding: 95px 0 110px;
+  padding: 90px 0 110px;
 
   background-color: $accent-blue;
   background-image: url("../images/triangles-bg.svg");
   background-repeat: no-repeat;
-  background-position: 10.2% -60px;
+  background-position: 14% -60px;
 
   @media (max-width: $tablet-width) {
-    padding: 85px 11.2% 105px 11.9%;
+    padding: 80px 11.2% 105px 11.9%;
 
     background-image: none;
   }

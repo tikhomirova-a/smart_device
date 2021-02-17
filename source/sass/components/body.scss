@@ -5,6 +5,8 @@
   display: grid;
   grid-template-rows: min-content 1fr min-content;
 
+  opacity: 50%; // TODO
+
   &--modal {
     @media (min-width: 1023px) {
       overflow: hidden;

@@ -1,5 +1,5 @@
 .features {
-  background-color: $basic-white;
+  background-color: transparent;
 }
 
 .features ul {
@@ -7,11 +7,13 @@
 
   display: grid;
   grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
   column-gap: 2.56%;
   row-gap: 30px;
 
   @media (max-width: $tablet-width) {
     column-gap: 3.89%;
+    grid-template-rows: min-content min-content;
   }
 
   @media (max-width: $mobile-width) {
@@ -47,13 +49,18 @@
 }
 
 .features__item {
-  padding: 40px 7% 50px;
+  padding: 40px 7% 65px;
+
+  background-color: $basic-white;
 
   @media (max-width: $tablet-width) {
-    padding: 25px 5.79% 35px 7.24%;
+    min-height: 230px;
+
+    padding: 25px 5.79% 18px 7.24%;
   }
 
   @media (max-width: $mobile-width) {
+    min-height: auto;
     padding: 25px 5.17% 20px 8.62%;
   }
 }
@@ -73,7 +80,7 @@
   color: $accent-blue;
 
   @media (max-width: $tablet-width) {
-    margin-bottom: 20px;
+    margin-bottom: 10px;
   }
 
   @media (max-width: $mobile-width) {
@@ -96,14 +103,18 @@
   li:hover & {
     color: $basic-white;
   }
+
+  @media (max-width: $tablet-width) {
+    padding-right: 1%;
+  }
 }
 
 .features__item svg {
-  margin-bottom: 25px;
+  margin-bottom: 20px;
 
   @media (max-width: $tablet-width) {
     width: 30px;
     height: 30px;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
   }
 }
