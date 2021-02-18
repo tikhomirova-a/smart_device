@@ -78,13 +78,19 @@
   max-width: 720px;
 
   @media (max-width: $tablet-width) {
+    position: relative;
+
     max-width: 500px;
+    padding-bottom: 53px;
   }
 
   @media (max-width: $mobile-width) {
     @include mobile-container;
 
+    position: static;
+
     max-width: none;
+    padding-bottom: 0;
 
     order: 1;
   }
@@ -185,13 +191,21 @@
   transform: none;
 
   @media (max-width: $tablet-width) {
-    margin-left: 48px;
-    width: calc(100% - 48px);
+    position: absolute;
+    bottom: 0;
+    right: -10px;
+    left: 48px;
+
+    min-width: 382px;
+    margin: 0;
   }
 
   @media (max-width: $mobile-width) {
+    position: static;
+
     margin-left: 0;
     width: 100%;
+    min-width: auto;
   }
 
   &:hover,

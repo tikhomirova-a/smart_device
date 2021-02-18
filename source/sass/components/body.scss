@@ -5,9 +5,10 @@
   display: grid;
   grid-template-rows: min-content 1fr min-content;
 
-  &--modal {
+  &--lock {
     @media (min-width: 1023px) {
-      overflow: hidden;
+      position: fixed;
+      overflow-y: scroll;
     }
   }
 }

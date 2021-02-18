@@ -84,6 +84,23 @@
   align-items: center;
 
   color: $basic-white;
+
+  &:hover,
+  &:focus {
+    color: $accent-blue;
+    outline: none;
+  }
+
+  &:active {
+    opacity: 0.5;
+  }
+
+  @media (max-width: $tablet-width) {
+    &:hover svg,
+    &:focus svg {
+      color: $basic-white;
+    }
+  }
 }
 
 .page-header__contacts svg {

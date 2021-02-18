@@ -12,6 +12,3 @@ npm-debug.*
 source/css/*.css
 source/css/*.map
 Thumbs.db
-source/images/mockup*.png
-source/images/desktop-modal.png
-source/mockup
