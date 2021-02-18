@@ -53,6 +53,8 @@
   }
 
   @media (max-width: $mobile-width) {
+    margin-bottom: 14px;
+
     font-size: 28px;
   }
 }
@@ -64,5 +66,9 @@
 
   @media (max-width: $tablet-width) {
     margin-bottom: 53px;
+  }
+
+  @media (max-width: $mobile-width) {
+    margin-bottom: 26px;
   }
 }

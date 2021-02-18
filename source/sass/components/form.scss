@@ -14,19 +14,34 @@
   }
 
   @media (max-width: $mobile-width) {
-    grid-template-columns: 1fr;
-    row-gap: 30px;
+    display: block;
   }
 
   &--modal {
-    grid-template-columns: 1fr;
-    row-gap: 30px;
+    display: block;
   }
 }
 
 .form__input {
+  @media (max-width: $mobile-width) {
+    margin-bottom: 30px;
+  }
+
   &--textarea {
     grid-column: 1/-1;
+
+    @media (max-width: $mobile-width) {
+      margin-bottom: 32px;
+      display: flex;
+    }
+  }
+
+  .form--modal & {
+    margin-bottom: 30px;
+  }
+
+  .form--modal &--textarea {
+    display: flex;
   }
 }
 
@@ -46,6 +61,14 @@
   background-color: rgba(255, 255, 255, 0.1);
 
   resize: none;
+
+  @media (max-width: $mobile-width) {
+    padding: 12px 16px 16px;
+  }
+
+  .form--modal & {
+    padding: 14px 25px 17px;
+  }
 
   &::placeholder {
     color: $basic-white;
@@ -78,6 +101,14 @@
 
 .form__checkbox {
   margin-left: 8px;
+
+  @media (max-width: $mobile-width) {
+    margin-left: 0;
+  }
+
+  .form--modal & {
+    margin-left: 0;
+  }
 }
 
 .form__checkbox label {
@@ -93,6 +124,11 @@
   line-height: 16px;
 
   opacity: 0.8;
+
+  .form--modal & {
+    padding-left: 48px;
+    max-width: 90%;
+  }
 }
 
 .form__checkbox-icon {
@@ -115,4 +151,18 @@
   input:focus + & {
     box-shadow: 2px 2px 5px $basic-white;
   }
+}
+
+.form button {
+  @media (max-width: $mobile-width) {
+    width: 100%;
+    padding: 13px 30px 15px;
+    margin-bottom: 26px;
+  }
+}
+
+.form--modal button {
+  width: 100%;
+  padding: 14px 30px 13px;
+  margin-bottom: 28px;
 }

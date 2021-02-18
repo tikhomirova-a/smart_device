@@ -33,7 +33,7 @@
   @media (max-width: $mobile-width) {
     @include mobile-container;
 
-    padding-top: 35px;
+    padding-top: 39px;
     padding-bottom: 65px;
   }
 }
@@ -59,7 +59,7 @@
   }
 
   @media (max-width: $mobile-width) {
-    padding-top: 60px;
+    padding-top: 55px;
   }
 }
 
@@ -88,7 +88,7 @@
   }
 
   @media (max-width: $mobile-width) {
-    padding-bottom: 65px;
+    padding-bottom: 64px;
   }
 }
 
@@ -109,8 +109,8 @@
   @media (max-width: $mobile-width) {
     @include mobile-container;
 
-    padding-top: 35px;
-    padding-bottom: 40px;
+    padding-top: 30px;
+    padding-bottom: 42px;
   }
 }
 

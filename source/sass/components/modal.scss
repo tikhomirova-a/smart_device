@@ -26,13 +26,15 @@
   transform: translate(-50%, -50%);
 
   width: 490px;
-  padding: 35px 40px;
+  padding: 30px 40px;
 
   background-color: $accent-blue;
 }
 
 .modal__content h3 {
   @include reset-text;
+
+  margin-bottom: 12px;
 
   font-family: "Roboto Condensed", "Arial", sans-serif;
   font-style: normal;
@@ -45,6 +47,7 @@
   @include reset-text;
 
   margin-bottom: 30px;
+  max-width: 90%;
 }
 
 .modal__content > button {

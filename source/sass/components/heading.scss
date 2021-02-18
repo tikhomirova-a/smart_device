@@ -25,7 +25,8 @@
   }
 
   @media (max-width: $mobile-width) {
-    background-position: 55%, 45vw -40%;
+    background-size: cover, 500px 500px;
+    background-position: 55%, 47vw -35%;
   }
 }
 
@@ -136,6 +137,8 @@
   }
 
   @media (max-width: $mobile-width) {
+    margin-bottom: 40px;
+
     font-size: 16px;
     line-height: 25px;
   }
@@ -236,7 +239,7 @@
 
   @media (max-width: $mobile-width) {
     height: 220px;
-    width: 91.87%;
+    width: 93%;
     margin: 0 -7px 0 auto;
   }
 }

@@ -25,6 +25,7 @@
 
   border: 1px solid #ebebeb;
   border-left: 3px solid $accent-blue;
+  background-color: $basic-white;
 
   cursor: pointer;
 
@@ -39,6 +40,11 @@
 
   @media (max-width: $mobile-width) {
     margin-bottom: 20px;
+
+    &:nth-child(4n+1),
+    &:nth-child(4n+2) {
+      min-height: 310px;
+    }
   }
 
   &:last-child {
@@ -51,8 +57,6 @@
 .features__item {
   padding: 40px 7% 65px;
 
-  background-color: $basic-white;
-
   @media (max-width: $tablet-width) {
     min-height: 230px;
 
@@ -60,8 +64,11 @@
   }
 
   @media (max-width: $mobile-width) {
-    min-height: auto;
-    padding: 25px 5.17% 20px 8.62%;
+    padding: 25px 5.17% 24px 8.62%;
+
+    &--suppliers {
+      padding-right: 2%;
+    }
   }
 }
 
@@ -84,7 +91,7 @@
   }
 
   @media (max-width: $mobile-width) {
-    margin-bottom: 15px;
+    margin-bottom: 7px;
 
     font-size: 20px;
     line-height: 28px;
@@ -92,6 +99,13 @@
 
   li:hover & {
     color: $basic-white;
+  }
+}
+
+.features__item--confidentiality h3,
+.features__item--price h3 {
+  @media (max-width: $mobile-width) {
+    margin-bottom: 16px;
   }
 }
 
@@ -107,6 +121,10 @@
   @media (max-width: $tablet-width) {
     padding-right: 1%;
   }
+
+  @media (max-width: $mobile-width) {
+    padding-right: 0;
+  }
 }
 
 .features__item svg {
@@ -116,5 +134,10 @@
     width: 30px;
     height: 30px;
     margin-bottom: 10px;
+  }
+
+  @media (max-width: $mobile-width) {
+    height: initial;
+    margin-bottom: 12px;
   }
 }
