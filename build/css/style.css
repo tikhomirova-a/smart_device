@@ -491,12 +491,12 @@ a[href] {
     .page-footer__copyright p:first-child {
       display: none; } }
   @media (max-width: 1023px) {
-    .page-footer__copyright p:nth-child(2) {
+    .page-footer__copyright p:nth-child(4n + 2) {
       position: absolute;
       top: 35px;
       left: 42.59%; } }
   @media (max-width: 767px) {
-    .page-footer__copyright p:nth-child(2) {
+    .page-footer__copyright p:nth-child(4n + 2) {
       top: 125px;
       left: 50%;
       width: 100%;
@@ -769,6 +769,7 @@ a[href] {
 .heading__info a {
   position: static;
   display: inline-block;
+  vertical-align: middle;
   margin-left: 95px;
   padding: 17px 6.5%;
   font-family: "Roboto Condensed", "Arial", sans-serif;

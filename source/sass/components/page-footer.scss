@@ -356,7 +356,7 @@
     }
   }
 
-  &:nth-child(2) {
+  &:nth-child(4n + 2) {
     @media (max-width: $tablet-width) {
       position: absolute;
       top: 35px;
