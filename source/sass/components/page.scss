@@ -9,4 +9,10 @@
   color: $basic-dark;
 
   background-color: $basic-white;
+
+  scroll-behavior: smooth;
+
+  &--inner {
+    background-color: $accent-blue;
+  }
 }

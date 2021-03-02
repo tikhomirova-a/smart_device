@@ -64,6 +64,7 @@
 }
 
 .page-header__contacts li {
+  padding: 5px 0;
   margin-right: 4.58vw;
 
   &:last-child {
@@ -71,6 +72,7 @@
   }
 
   @media (max-width: $tablet-width) {
+    padding: 0;
     margin-right: 4.28vw;
   }
 

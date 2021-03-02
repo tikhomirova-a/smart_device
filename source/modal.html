@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ru" class="page page--inner">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+        content="Заказ обратного звонка из компании «Smart Device».">
+  <link rel="stylesheet" href="css/style.min.css">
+  <title>Smart Device|Форма обратной связи</title>
+</head>
+<body class="body">
+<div class="modal modal--open">
+  <h1 class="visually-hidden">Форма обратной связи</h1>
+  <div class="modal__content">
+    <h2>Закажите звонок</h2>
+    <p>Оставьте контакты, мы проконсультируем вас бесплатно в удобное время</p>
+    <form class="modal__form form form--modal" method="POST" action="https://echo.htmlacademy.ru">
+      <div class="form__input form__input--name">
+        <label for="modal-name" class="visually-hidden">Введите Ваше имя</label>
+        <input id="modal-name" type="text" name="name" placeholder="Имя" required>
+      </div>
+      <div class="form__input form__input--tel">
+        <label for="modal-tel" class="visually-hidden">Введите 10 цифр Вашего номер телефона</label>
+        <input id="modal-tel" type="tel" name="tel" placeholder="Телефон" required maxlength="14" minlength="14">
+      </div>
+      <div class="form__input form__input--textarea">
+        <label for="modal-question" class="visually-hidden">Задайте Ваш вопрос</label>
+        <textarea id="modal-question" name="question-text" placeholder="Ваш вопрос" rows="6"></textarea>
+      </div>
+      <button class="button" type="submit">Отправить</button>
+      <div class="form__checkbox">
+        <label for="modal-agreement">
+          <input id="modal-agreement" class="visually-hidden" type="checkbox" name="checkbox-agreement"
+                  required checked>
+          <span class="form__checkbox-icon"></span>
+          Я согласен на обработку персональных данных
+        </label>
+      </div>
+    </form>
+  </div>
+</div>
+</body>
+</html>

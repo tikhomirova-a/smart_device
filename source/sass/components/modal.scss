@@ -17,6 +17,13 @@
 
     background-color: rgba(0, 0, 0, 0.4);
   }
+
+  .page--inner &--open {
+    position: static;
+    overflow-y: auto;
+
+    background-color: $accent-blue;
+  }
 }
 
 .modal__content {
@@ -30,9 +37,22 @@
   padding: 30px 40px;
 
   background-color: $accent-blue;
+
+  .page--inner & {
+    position: static;
+    margin: 0 auto;
+
+    transform: none;
+
+    @media (max-width: $mobile-width) {
+      width: 100%;
+      max-width: 490px;
+    }
+  }
 }
 
-.modal__content h3 {
+.modal__content h3,
+.page--inner .modal__content h2 {
   @include reset-text;
 
   margin-bottom: 12px;

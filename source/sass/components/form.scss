@@ -45,6 +45,10 @@
   }
 }
 
+.form__input input:required {
+  box-shadow: none;
+}
+
 .form__input input,
 .form__input textarea {
   width: 100%;
@@ -58,6 +62,7 @@
   color: $basic-white;
 
   border: none;
+  border-radius: 0;
   background-color: rgba(255, 255, 255, 0.1);
 
   resize: none;
@@ -124,6 +129,7 @@
   line-height: 16px;
 
   opacity: 0.8;
+  cursor: pointer;
 
   .form--modal & {
     padding-left: 48px;

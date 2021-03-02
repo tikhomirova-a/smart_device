@@ -29,13 +29,13 @@
   width: 73.5%;
   min-width: 980px;
   margin: 0 auto 58px;
-  display: grid;
-  grid-template-columns: minmax(202px, 30%) 1fr max-content;
+  display: flex;
 
   @media (max-width: $tablet-width) {
     width: 100%;
     min-width: auto;
     margin-bottom: 0;
+    display: grid;
     grid-template-columns: 1fr 1fr;
   }
 
@@ -54,6 +54,7 @@
 
 .page-footer__socials-wrapper {
   min-width: 202px;
+  padding-right: 5%;
 
   @media (max-width: $tablet-width) {
     position: relative;
@@ -62,6 +63,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding-right: 0;
     padding-bottom: 25px;
     margin-bottom: 38px;
   }
@@ -121,11 +123,19 @@
 }
 
 .page-footer__nav {
+  flex: 0 0 36%;
+  margin-right: auto;
+  margin-left: auto;
+  min-width: 410px;
+
   @media (max-width: $tablet-width) {
     position: relative;
 
     grid-column: 1/2;
     padding-bottom: 35px;
+    min-width: auto;
+    flex-basis: auto;
+    margin: 0;
   }
 
   @media (max-width: $mobile-width) {
@@ -161,15 +171,15 @@
 .page-footer__nav ul {
   @include reset-list;
 
-  height: 100px;
-  flex-wrap: wrap;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
+  display: grid;
+  column-count: 2;
+  column-gap: normal;
+  grid-auto-flow: dense;
 
   @media (max-width: $tablet-width) {
     height: auto;
     display: block;
+    column-count: auto;
   }
 
   @media (max-width: $mobile-width) {
@@ -183,10 +193,23 @@
   }
 }
 
+.page-footer__nav li {
+  &:nth-child(-n+4) {
+    grid-column: 1/2;
+  }
+
+  &:nth-child(n+5):nth-child(-n+8) {
+    grid-column: 2/3;
+  }
+}
+
 .page-footer__contacts {
+  min-width: 333px;
+
   @media (max-width: $tablet-width) {
     grid-column: 2/-1;
     padding-left: 4.16%;
+    min-width: auto;
   }
 
   @media (max-width: $mobile-width) {
@@ -227,6 +250,11 @@
   }
 }
 
+.page-footer__nav li,
+.page-footer__contacts li {
+  color: rgba(27, 45, 55, 0.5);
+}
+
 .page-footer__nav a,
 .page-footer__contacts a {
   color: $basic-dark;
@@ -257,7 +285,6 @@
   line-height: 24px;
   letter-spacing: 0.04em;
   text-transform: uppercase;
-  opacity: 0.5;
 
 
   @media (max-width: $tablet-width) {
@@ -333,6 +360,8 @@
 
   margin-right: auto;
 
+  color: rgba(27, 45, 55, 0.5);
+
   @media (max-width: $tablet-width) {
     margin: 0;
   }
@@ -377,5 +406,21 @@
     @media (max-width: $mobile-width) {
       margin-bottom: 0;
     }
+  }
+}
+
+.page-footer__copyright a {
+  color: $basic-dark;
+  opacity: 0.5;
+
+  &:hover,
+  &:focus {
+    color: $special-gray;
+    opacity: 1;
+  }
+
+  &:active {
+    color: $special-gray;
+    opacity: 0.3;
   }
 }
