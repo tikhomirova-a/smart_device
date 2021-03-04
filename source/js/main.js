@@ -261,43 +261,19 @@
   }
 
   let maskOptions = {
-    mask: '+7(0000000000)'
+    mask: '+7(000)0000000'
   };
   let feedbackMask = IMask(formTel, maskOptions);
-
-  const setCaretPosition = (input, position) => {
-    input.setSelectionRange(position, position);
-  };
 
   const onFormTelFocus = (input) => {
     let currentValue = input.value;
     currentValue === `` ? input.value = `+7(` : input.value = currentValue;
-    setCaretPosition(input, 3);
   };
 
   const onFormTelInput = (input) => {
-    const re = /\+7\([\d]/g;
-    const completedRe = /\+7\([\d]{10}/g;
-    const finalRe = /\+7\([\d]{10}\)/g;
-
-    if (input.value.length > 0 && input.value.length < 13 && !re.test(input.value)) {
-      input.setCustomValidity(`Пожалуйста, вводите только цифры.`);
-    } else if (input.value.length === 13 && completedRe.test(input.value)) {
-      input.value += `)`;
-      input.setCustomValidity(``);
-    } else if (input.value.length > 0 && (input.value.length <= 13 || input.value.length > 13) && !finalRe.test(input.value)) {
-      if ((input.value.length <= 13 && /.*\)/.test(input.value))) {
-        input.value = input.value.split(``).filter((char) => {
-          return char !== `)`;
-        }).join(``);
-      }
+    if (input.value.length < 14) {
       input.setCustomValidity(`Пожалуйста, введите 10 цифр номера телефона.`);
-    } else if (input.value.length < 14 && !finalRe.test(input.value)) {
-      input.setCustomValidity(`Пожалуйста, введите 10 цифр номера телефона.`);
-    } else if (input.value.length === 14 && finalRe.test(input.value)) {
-      input.setCustomValidity(``);
-    }
-    else {
+    } else {
       input.setCustomValidity(``);
     }
     input.reportValidity();

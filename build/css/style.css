@@ -842,7 +842,9 @@ a[href] {
   @media (max-width: 767px) {
     .heading__info a {
       position: static;
-      margin-left: 0;
+      display: block;
+      max-width: 310px;
+      margin: 0 auto;
       width: 100%;
       min-width: auto; } }
   .heading__info a:hover, .heading__info a:focus {
@@ -1445,8 +1447,8 @@ a[href] {
 @media (max-width: 767px) {
   .form button {
     width: 100%;
-    padding: 13px 30px 15px;
-    margin-bottom: 26px; } }
+    margin-bottom: 26px;
+    padding: 13px 30px 15px; } }
 
 .form--modal button {
   width: 100%;
